@@ -1,0 +1,104 @@
+#:import utils kivy.utils
+
+<HomeScreen>:
+    FloatLayout:
+        GridLayout:
+            #First Layer Icon
+            rows:1
+            pos_hint:{'top': 1,'left':1}
+            size_hint: 1,0.1
+            Image:
+                source: 'Icon-top/computer.png'
+            Image:
+                source: 'Icon-top/download.png'
+
+        GridLayout:
+            #2nd layer of Icons and avatars
+            rows:1
+            pos_hint:{'top': 0.9,'left':1}
+            size_hint: 1,0.1
+            Image:
+                source: 'Icon-top/login.png'
+            Image:
+                source: '1.jpeg'
+            Image:
+                source: 'Icon-top/student.png'
+
+        Label:
+            #label('Welcome to ACE')
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#1d4263")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            bold: True
+            italics: True
+            rows:1
+            text:"Welcome to ACE Chapter"
+            pos_hint:{'top': 0.7,'left':1}
+            size_hint: 1,0.1
+        GridLayout:
+            #Banner Grid
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#FFFFFF")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            rows:1
+            pos_hint:{'top': 0.6,'left':1}
+            size_hint: 1,0.5
+            ImageButton:
+
+                source: 'icon-menu/chat.png'
+                on_press:
+                    self.source='icon-bottom-down/press-conference.png'
+                on_release:
+                    self.source='icon-menu/chat.png'
+                    app.change_screen("login_screen")
+            ImageButton:
+
+                source: 'icon-menu/live.png'
+                on_press:
+                    self.source='icon-bottom-down/press-conference.png'
+                on_release:
+                    self.source='icon-menu/live.png'
+
+            ImageButton:
+
+                source: 'icon-menu/notes.png'
+                on_press:
+                    self.source='icon-bottom-down/press-conference.png'
+                on_release:
+                    self.source='icon-menu/notes.png'
+
+
+        GridLayout:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#6d53ad")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            #Add 3 menu button
+            rows:1
+            pos_hint:{'top': 0.1,'left':1}
+            size_hint: 1,0.1
+            ImageButton:
+                source: 'Icon-bottom/report.png'
+                on_press:
+                    self.source='icon-bottom-down/press-conference.png'
+                on_release:
+                    self.source='Icon-bottom/report.png'
+
+            ImageButton:
+                source: 'Icon-bottom/marketing.png'
+                on_release: quit()
+                on_press:
+                    self.source='icon-bottom-down/press-conference.png'
+                on_release:
+                    self.source='Icon-bottom/marketing.png'
+

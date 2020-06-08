@@ -1,0 +1,25 @@
+#:include kv/homescreen.kv
+#:include kv/infoscreen.kv
+#:include kv/chatscreen.kv
+#:include kv/loginscreen.kv
+#:include kv/signupscreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        InfoScreen:
+            name:  "info_screen"
+            id: info_screen
+        LoginScreen:
+            name: "login_screen"
+            id: login_screen
+        SignupScreen:
+            name: "signup_screen"
+            id: signup_screen
+        ChatScreen:
+            name:"chat_screen"
+            id: chat_screen

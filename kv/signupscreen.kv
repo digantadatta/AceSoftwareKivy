@@ -1,0 +1,62 @@
+#:import utils kivy.utils
+
+<SignupScreen>:
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex("#39B3F2")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            text: "Email"
+            pos_hint:{'top':0.8,'right':1}
+            size_hint: .8,.1
+            bold: True
+            italic: True
+        TextInput:
+            id:login_email
+            hint_text:"Email ID"
+            multiline: False
+            size_hint:.8,.05
+            pos_hint:{'top':0.7,'right':0.9}
+        Label:
+            text: "Password"
+            pos_hint:{'top':0.6,'right':1}
+            size_hint: .8,.1
+            bold: True
+            italic: True
+        TextInput:
+            id:login_password
+            password: True
+            hint_text:"Password"
+            multiline: False
+            size_hint:.8,.05
+            pos_hint:{'top':0.5,'right':0.9}
+
+        Label:
+            text: "Name"
+            pos_hint:{'top':0.4,'right':1}
+            size_hint: .8,.1
+            bold: True
+            italic: True
+
+        TextInput:
+            id:login_name
+            hint_text:"Name"
+            multiline: False
+            size_hint:.8,.05
+            pos_hint:{'top':0.3,'right':0.9}
+        Button:
+            text: "SignUp"
+            size_hint:.3,.07
+            pos_hint: {'top':0.2,'right':0.8}
+            on_release:
+                app.my_firebase.sign_up(login_email.text,login_password.text)
+
+        Button:
+            text: "Go Back"
+            size_hint:.3,.07
+            pos_hint: {'top':0.1,'right':0.8}
+            on_release:
+                app.change_screen("login_screen")

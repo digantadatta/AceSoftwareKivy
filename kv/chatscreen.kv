@@ -1,0 +1,25 @@
+<ChatScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols:1
+            Label:
+                text:'Write in JSON string'
+            TextInput:
+                size_hint_y: 0.2
+        GridLayout:
+            cols:1
+            Button:
+                text: "Patch Line"
+            Button:
+                text: "Post Line"
+            Button:
+                text: "Put Line"
+            Button:
+                text: "Delete Line"
+            Button:
+                text: "Get and print line"
+            Button:
+                text: "Go Back"
+                on_release:
+                    app.change_screen("home_screen")
